@@ -1,4 +1,3 @@
-// components/ContactForm.tsx
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
@@ -25,7 +24,6 @@ const ContactForm: React.FC<{ contact?: Contact; onClose: () => void }> = ({
     phone: ''
   })
 
-  // Atualizar o estado interno quando o contato muda (para o modo de edição)
   useEffect(() => {
     if (contact) {
       setFormData(contact)
@@ -43,17 +41,13 @@ const ContactForm: React.FC<{ contact?: Contact; onClose: () => void }> = ({
     e.preventDefault()
 
     if (formData.id) {
-      // Se há um ID, é uma edição
       dispatch(editContact(formData))
     } else {
-      // Se não há um ID, é uma adição
       dispatch(addContact({ ...formData, id: String(new Date().getTime()) }))
     }
 
-    // Limpar o formulário após adição ou edição
     setFormData({ id: '', fullName: '', email: '', phone: '' })
 
-    // Fechar o formulário
     onClose()
   }
 

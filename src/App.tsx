@@ -22,7 +22,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <>
-        <GlobalStyles /> {/* Incluindo estilos globais */}
+        <GlobalStyles />
         <AppContainer>
           <h1>Lista de Contatos</h1>
           <ContactList />

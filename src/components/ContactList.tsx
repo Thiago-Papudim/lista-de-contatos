@@ -54,10 +54,8 @@ const ContactList: React.FC = () => {
         </ContactItem>
       ))}
 
-      {/* Adicionar um botão separado para adicionar contato */}
       <button onClick={handleAddContact}>Adicionar Contato</button>
 
-      {/* Renderizar o formulário de contato apenas se um contato estiver selecionado */}
       {selectedContact !== null && (
         <ContactForm
           contact={selectedContact}
